@@ -1,2 +1,1 @@
-# Lab 2 - Starter
-https://yutingduan111.github.io/Lab2_Starter/
+https://yutingduan111.github.io/sp26-cse110-lab3/
