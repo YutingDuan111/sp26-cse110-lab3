@@ -1,0 +1,237 @@
+/* CSS Variables */
+:root {
+  --primary-color: rgb(168, 222, 8);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+body {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    /* padding - Longhand syntax */
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+
+    /* boarder - Longhand properties */
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-radius: 8px;
+}
+
+div {
+    margin: 15px 10px auto auto;
+    padding: 10px 15px 10px 15px;
+}
+
+nav ol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  align-items: center;
+}
+
+footer {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+
+}
+
+footer.highlight { 
+    color: yellowgreen;
+}
+
+/* set up h2 style for all subtitles*/
+h2 {
+    background: color(srgb 0.66 0.87 0.03);
+    display: block;
+    position: static;
+
+    /* Absolute units */
+    border: 2px solid color-mix(in srgb, color(srgb 0.66 0.87 0.03) 60%, color(srgb 0.2 0.3 0.5) 40%);
+    padding: 12pt 1cm;
+    margin-bottom: 1in;
+
+    /* Relative units: em, vh, vw */
+    font-size: 1.5rem;
+    line-height: 1.2em;
+    width: 80vw;
+    max-height: 60vh;
+
+    /* falls back to hsl() if variable fails */
+    color: var(--text-color, hsl(0, 0%, 39%));
+}
+
+h3 {
+    font-family: Roboto;
+    text-decoration-line: underline;
+    text-align: left;
+}
+
+img {
+  height: 200px;
+  width: 300px;
+  max-width: 100%;
+  min-width: 100px;
+  border: 1px solid var(--primary-color);
+}
+
+/* Nested Selector (&) - Pseudo-selectors nested under parent element */
+a {
+    &:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+        background-color: rgba(168, 222, 8, 0.2);
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+
+    &:active {
+        color: hsl(0, 0%, 100%);
+        background-color: var(--primary-color);
+        transform: scale(0.98);
+    }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.highlight {
+  background-color: rgba(168, 222, 8, 0.15);
+  padding: 5px;
+}
+
+#main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+input[type="text"]{
+  padding: 8px;
+  border: 1px solid var(--primary-color);
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: rgb(215, 17, 83);
+}
+
+ol > li {
+  list-style-position: inside;
+  margin: 5px 0;
+}
+
+fieldset ~ fieldset {
+  margin-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 15px;
+}
+
+textarea + br {
+  display: none;
+}
+
+nav ol > li a[href] {
+  font-weight: bold;
+  color: rgb(215, 17, 83);
+}
+
+h2:has(+ ol) {
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* Tablet & Smaller Laptop (600px - 1024px) */
+@media (max-width: 1024px) {
+  body {
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+  }
+
+  h2 {
+    width: 90vw;
+    font-size: 1.3rem;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile (under 600px) */
+@media (max-width: 600px) {
+  body {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 8px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+  }
+
+  nav ol {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  h2 {
+    width: 100vw;
+    font-size: 1.1rem;
+    padding: 8pt 0.5cm;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    height: 150px;
+    width: 100%;
+  }
+}
+
