@@ -63,12 +63,12 @@ footer.highlight {
 
 /* set up h2 style for all subtitles*/
 h2 {
-    background: color(srgb 0.66 0.87 0.03);
+    background: color(display-p3 1 0.5 0.8 / 0.5);
     display: block;
     position: static;
 
     /* Absolute units */
-    border: 2px solid color-mix(in srgb, color(srgb 0.66 0.87 0.03) 60%, color(srgb 0.2 0.3 0.5) 40%);
+    border: 2px solid color-mix(in hsl, hsl(67, 94%, 45%) 60%, hsl(220, 43%, 35%) 40%);
     padding: 12pt 1cm;
     margin-bottom: 1in;
 
@@ -96,21 +96,23 @@ img {
   border: 1px solid var(--primary-color);
 }
 
-/* Nested Selector (&) - Pseudo-selectors nested under parent element */
-a {
-    &:hover {
-        color: var(--primary-color);
-        text-decoration: underline;
-        background-color: rgba(168, 222, 8, 0.2);
-        padding: 2px 5px;
-        border-radius: 3px;
-    }
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+    background-color: rgba(168, 222, 8, 0.2);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
 
-    &:active {
-        color: hsl(0, 0%, 100%);
-        background-color: var(--primary-color);
-        transform: scale(0.98);
-    }
+a:active {
+    color: hsl(0, 0%, 100%);
+    background-color: var(--primary-color);
+    transform: scale(0.98);
+}
+
+.button {
+  background: gray;
+  &:hover { background: blue; }
 }
 
 
